@@ -35,4 +35,8 @@ set_user_param PX4_HOME_ALT "${PX4_HOME_ALT}"
 
 mv "${NEW_CONFIG_FILE}" "${CONFIG_FILE}"
 
-make px4_sitl gazebo_standard_vtol
+HEADLESS="${HEADLESS}" \
+PX4_HOME_LAT="${PX4_HOME_LAT}" \
+PX4_HOME_LON="${PX4_HOME_LON}" \
+PX4_HOME_ALT="${PX4_HOME_ALT}" \
+        make px4_sitl gazebo_standard_vtol
