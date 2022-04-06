@@ -20,6 +20,12 @@ WSLCONFIG_PATH="${WINDOWS_USER_DIR}/.wslconfig"
 sudo apt install -y \
         git \
         build-essential \
+        cmake \
+
+test -d "${VENV_DIR}" || virtualenv -p python3 "${VENV_DIR}"
+source "${VENV_DIR}/bin/activate"
+pip install pyserial empy toml numpy pandas jinja2 pyyaml pyros-genmsg packaging
+deactivate
 
 
 ### INCREASE WSL MEMORY ###
