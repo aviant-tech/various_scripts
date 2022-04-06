@@ -10,6 +10,16 @@ function call {
         eval "$1"
 }
 
+sudo apt update -y \
+       python3 \
+       python3-pip \
+       virtualenv \
+
+test -d venv || virtualenv -p python3 venv
+source venv/bin/activate
+pip install -r requirements.txt
+deactivate
+
 WINDOWS_USERNAME="$1"
 
 SCRIPT_DIR="${HOME}/various_scripts"
