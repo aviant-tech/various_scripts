@@ -3,6 +3,7 @@
 CONFIG_FILE=".px4.conf"
 NEW_CONFIG_FILE=".px4.conf.new"
 
+source "${HOME}/various_scripts/venv/bin/activate"
 cd "${HOME}/PX4-Autopilot"
 
 test -f "${CONFIG_FILE}" && source "${CONFIG_FILE}"
