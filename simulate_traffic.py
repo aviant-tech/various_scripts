@@ -1,3 +1,5 @@
+#!venv/bin/python3
+
 from pymavlink import mavutil
 from math import *
 import time
