@@ -6,6 +6,7 @@ import time
 import random
 import sys
 
+print('Connecting...')
 master = mavutil.mavlink_connection("udpin:0.0.0.0:14540")
 
 r_earth = 6317e3
