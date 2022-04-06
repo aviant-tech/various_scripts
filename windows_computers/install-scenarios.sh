@@ -10,22 +10,24 @@ function call {
         eval "$1"
 }
 
-sudo apt update -y \
+sudo apt install -y \
        python3 \
        python3-pip \
        virtualenv \
 
-test -d venv || virtualenv -p python3 venv
-source venv/bin/activate
-pip install -r requirements.txt
-deactivate
-
 WINDOWS_USERNAME="$1"
 
 SCRIPT_DIR="${HOME}/various_scripts"
+VENV_DIR="${SCRIPT_DIR}/venv"
 SCENARIOS_SCRIPT_PATH="${SCRIPT_DIR}/sim-scenarios.sh"
 WINDOWS_USER_DIR="/mnt/c/Users/${WINDOWS_USERNAME}"
 WINDOWS_SHORTCUT_PATH="${WINDOWS_USER_DIR}/Desktop/scenarios.bat"
+
+
+test -d "${VENV_DIR}" || virtualenv -p python3 "${VENV_DIR}"
+source "${VENV_DIR}/bin/activate"
+pip install -r requirements.txt
+deactivate
 
 
 if [ -z "${WINDOWS_USERNAME}" ]; then
