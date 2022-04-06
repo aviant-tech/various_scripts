@@ -6,3 +6,4 @@ sudo apt install -y \
         vim \
         tmux \
         htop \
+        git

@@ -10,7 +10,13 @@ function call {
         eval "$1"
 }
 
-#sudo apt install -y
+### INSTALL QGC DEPENDENCIES ###
+
+sudo apt install -y \
+
+
+
+### INSTALL THE QGC APP IMAGE ###
 
 WINDOWS_USERNAME="$1"
 QGC_APPIMAGE_FILENAME="$2"
