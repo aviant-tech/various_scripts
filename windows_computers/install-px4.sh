@@ -21,6 +21,12 @@ sudo apt install -y \
         git \
         build-essential \
         cmake \
+        libgazebo-dev \
+        libboost1.74-all-dev \
+        libopencv-dev \
+        libgstreamer1.0-dev \
+        libgstreamer-plugins-base1.0-dev
+
 
 pip install --user pyserial empy toml numpy pandas jinja2 pyyaml pyros-genmsg packaging
 
@@ -28,7 +34,7 @@ pip install --user pyserial empy toml numpy pandas jinja2 pyyaml pyros-genmsg pa
 ### INCREASE WSL MEMORY ###
 
 if ! [ -f "${WSLCONFIG_PATH}" ]; then
-        call "echo -e '[wsl2]\nmemory=3GB\nswap=10GB' > '${WSLCONFIG_PATH}'"
+        call "echo -e '[wsl2]\nmemory=7GB\nswap=10GB' > '${WSLCONFIG_PATH}'"
 fi
 
 ### BUILD THE SIMULATOR ###
