@@ -51,6 +51,8 @@ if ! [ -d "${PX4_PATH}" ]; then
 fi
 call "cd '${PX4_PATH}'"
 call "git pull"
+call "git checkout aviant-dev/1.12"
+call "git submodule update --init --recursive"
 
 BATFILE_CMD="wsl \"${PX4_DESTINATION_PATH}\""
 call "echo '${BATFILE_CMD}' > ${WINDOWS_SHORTCUT_PATH}"
