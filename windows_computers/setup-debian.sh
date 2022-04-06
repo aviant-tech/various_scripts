@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function usage {
-        echo "Usage: ./install-mavproxy.sh WINDOWS_USERNAME"
+        echo "Usage: ./setup-debian.sh WINDOWS_USERNAME"
         exit 1
 }
 
