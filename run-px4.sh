@@ -37,5 +37,3 @@ set_user_param PX4_HOME_ALT "${PX4_HOME_ALT}"
 mv "${NEW_CONFIG_FILE}" "${CONFIG_FILE}"
 
 make px4_sitl gazebo_standard_vtol
-
-

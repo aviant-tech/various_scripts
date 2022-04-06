@@ -17,17 +17,12 @@ WSLCONFIG_PATH="${WINDOWS_USER_DIR}/.wslconfig"
 
 ### INSTALL PX4 DEPENDENCIES ###
 
-SCRIPT_DIR="${HOME}/various_scripts"
-VENV_DIR="${SCRIPT_DIR}/venv"
 sudo apt install -y \
         git \
         build-essential \
         cmake \
 
-test -d "${VENV_DIR}" || virtualenv -p python3 "${VENV_DIR}"
-source "${VENV_DIR}/bin/activate"
-pip install pyserial empy toml numpy pandas jinja2 pyyaml pyros-genmsg packaging
-deactivate
+pip install --user pyserial empy toml numpy pandas jinja2 pyyaml pyros-genmsg packaging
 
 
 ### INCREASE WSL MEMORY ###
@@ -40,6 +35,7 @@ fi
 
 PX4_REPO="https://github.com/aviant-tech/PX4-Autopilot.git"
 PX4_PATH="${HOME}/PX4-Autopilot"
+SCRIPT_DIR="${HOME}/various_scripts"
 PX4_DESTINATION_PATH="${SCRIPT_DIR}/run-px4.sh"
 
 if [ -z "${WINDOWS_USERNAME}" ]; then
