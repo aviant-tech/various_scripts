@@ -44,7 +44,7 @@ fi
 
 if [ -z "${QGC_APPIMAGE_FILENAME}" ]; then 
         echo "Not installing QGC appimage from Downloads directory"
-        QGC_DESTINATION_PATH="${BIN_DIR}/QGroundControl"
+        QGC_DESTINATION_PATH="${BIN_DIR}/QGroundControl-Aviant.AppImage"
 else
         echo "Installing QGC appimage from Downloads directory"
         if ! [ -f "${QGC_APPIMAGE_PATH}" ]; then
