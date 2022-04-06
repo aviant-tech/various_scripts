@@ -13,8 +13,15 @@ function call {
 ### INSTALL QGC DEPENDENCIES ###
 
 sudo apt install -y \
+        fuse \
+        libsdl2-2.0-0 \
+        gstreamer1.0-plugins-bad \
+        libpulse-mainloop-glib0 \
+        qt5dxcb-plugin
 
+### SET USER PERMISSION ###
 
+sudo adduser aviant dialout
 
 ### INSTALL THE QGC APP IMAGE ###
 
