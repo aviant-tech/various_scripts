@@ -56,8 +56,8 @@ else
         call "chmod u+x '${QGC_DESTINATION_PATH}'"
 fi
 
-if ! [ -x "${QGC_DESTINATION_PATH}" ]; then
-       echo "QGC_DESTINATION_PATH is not an executable file: ${QGC_DESTINATION_FILE}"
+if ! [ -x "${QGC_DESTINATION_PATH}" ] || [ -d "${QGC_DESTINATION_PATH}" ]; then
+       echo "QGC_DESTINATION_PATH is not an executable file: ${QGC_DESTINATION_PATH}"
        exit 1
 fi
 
