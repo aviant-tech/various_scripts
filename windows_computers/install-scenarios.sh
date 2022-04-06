@@ -17,7 +17,6 @@ SCENARIOS_SCRIPT_PATH="${SCRIPT_DIR}/sim-scenarios.sh"
 WINDOWS_USER_DIR="/mnt/c/Users/${WINDOWS_USERNAME}"
 WINDOWS_SHORTCUT_PATH="${WINDOWS_USER_DIR}/Desktop/scenarios.bat"
 
-BATFILE_CMD="wsl -e \"${SCENARIOS_DESTINATION_PATH}\""
 
 if [ -z "${WINDOWS_USERNAME}" ]; then
         echo "Empty WINDOWS_USERNAME: '${WINDOWS_USERNAME}'"
@@ -34,6 +33,7 @@ if ! [ -x "${SCENARIOS_SCRIPT_PATH}" ]; then
        exit 1
 fi
 
+BATFILE_CMD="wsl ${SCENARIOS_SCRIPT_PATH}"
 call "echo '${BATFILE_CMD}' > ${WINDOWS_SHORTCUT_PATH}"
 if ! [ -f "${WINDOWS_SHORTCUT_PATH}" ]; then
         echo "WINDOWS_SHORTCUT_PATH is not a file: ${WINDOWS_SHORTCUT_PATH}"
