@@ -3,7 +3,6 @@
 CONFIG_FILE=".px4.conf"
 NEW_CONFIG_FILE=".px4.conf.new"
 
-source "${HOME}/various_scripts/venv/bin/activate"
 cd "${HOME}/PX4-Autopilot"
 
 test -f "${CONFIG_FILE}" && source "${CONFIG_FILE}"
@@ -20,9 +19,9 @@ function set_user_param {
         fi
         read USER_VALUE
         if [ -z "${USER_VALUE}" ]; then
-                NEW_VALUE="${PARAM_VALUE}"
+                export NEW_VALUE="${PARAM_VALUE}"
         else
-                NEW_VALUE="${USER_VALUE}"
+                export NEW_VALUE="${USER_VALUE}"
         fi
         eval "${PARAM_NAME}='${NEW_VALUE}'"
         echo "${PARAM_NAME}=\"${NEW_VALUE}\"" | tee -a "${NEW_CONFIG_FILE}"

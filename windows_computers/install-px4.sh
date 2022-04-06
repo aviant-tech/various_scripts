@@ -25,7 +25,8 @@ sudo apt install -y \
         libboost1.74-all-dev \
         libopencv-dev \
         libgstreamer1.0-dev \
-        libgstreamer-plugins-base1.0-dev
+        libgstreamer-plugins-base1.0-dev \
+        gazebo \
 
 
 pip install --user pyserial empy toml numpy pandas jinja2 pyyaml pyros-genmsg packaging
