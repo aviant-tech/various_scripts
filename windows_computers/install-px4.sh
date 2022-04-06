@@ -17,6 +17,8 @@ WSLCONFIG_PATH="${WINDOWS_USER_DIR}/.wslconfig"
 
 ### INSTALL PX4 DEPENDENCIES ###
 
+SCRIPT_DIR="${HOME}/various_scripts"
+VENV_DIR="${SCRIPT_DIR}/venv"
 sudo apt install -y \
         git \
         build-essential \
@@ -38,7 +40,6 @@ fi
 
 PX4_REPO="https://github.com/aviant-tech/PX4-Autopilot.git"
 PX4_PATH="${HOME}/PX4-Autopilot"
-SCRIPT_DIR="${HOME}/various_scripts"
 PX4_DESTINATION_PATH="${SCRIPT_DIR}/run-px4.sh"
 
 if [ -z "${WINDOWS_USERNAME}" ]; then
